@@ -1,0 +1,16 @@
+<div ng-show = "vm.Display">
+    <search-Navigation></search-Navigation>
+    <div class ="container" style="margin-top:20px">
+        <h1>Showing Results for "{{vm.query}}"</h1>
+        <div ng-if = "!vm.noResult">
+        <ul>
+            <li ng-repeat="result in vm.searchResults"><a ng-href={{result.url}}>{{result.transcript}}</a></li>
+        </ul>
+        </div>
+        
+        <div ng-show = "vm.noResult">
+            <h2>Sorry :( We could'nt find any videos related to {{vm.query}}</h2>
+        </div>
+    </div>
+</div>
+

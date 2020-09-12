@@ -1,0 +1,29 @@
+{
+  "name": "search-engine",
+  "version": "1.0.0",
+  "description": "Shitty Search Engine",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.6.0",
+    "angular": "^1.8.0",
+    "angular-jwt": "^0.1.11",
+    "angular-route": "^1.8.0",
+    "express": "^4.17.1",
+    "md5": "^2.3.0",
+    "mongoose": "^5.9.26",
+    "pytalk": "^1.0.5",
+    "python-shell": "^2.0.1",
+    "sentence-tokenizer": "^1.0.1",
+    "sleep": "^6.3.0"
+  }
+}
