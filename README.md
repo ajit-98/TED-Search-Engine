@@ -10,14 +10,15 @@
   <li> cd to project directory and run the following commands </li>
   
   ```
-  npm install #install all dependencies listed in package.json
-  cd api/python-scripts 
-  python createDB.py #insert video transcripts into mongoDB 
+  >> npm install #install all dependencies listed in package.json
+  >> cd api/python-scripts 
+  >> python createDB.py #insert video transcripts into mongoDB 
+  >> python updateIndex.py #create inverted index from video transcript data
   ```
   <li> Open another command prompt and start a rabbitmq server </li>
   
   ```
-  rabbitmq-server
+  >> rabbitmq-server
   
   ```
   <li> Start the application with nodemon </li>
