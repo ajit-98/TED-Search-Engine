@@ -1,6 +1,6 @@
 # TED-Search-Engine
 <h1> What is it? </h1>
-<p> A full text search engine to find TED talks, built using Python and MEAN Stack.</p>
+<p> A full text search engine to find TED talks, built from scratch using Python and MEAN Stack.</p>
 
 <img src="gifs/frontend.gif" width="500">
 
