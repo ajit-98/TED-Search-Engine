@@ -21,9 +21,17 @@
   <img src = "gifs/backend.gif" width = "500">
 </ul>
 
-<h1> Dependecies </h1>
-<p><b>Note</b> the application uses Python 3.7.4, Node.js 12.18.3 and mongoDB 4.2.8. The dependencies listed are for Python only,
-dependencies for Node js can be installed via npm install </p>
+<h1> Dependencies </h1>
+<p><b>Note:</b> The application uses Python 3.7.4, Node.js 12.18.3, mongoDB 4.2.8 and RabbitMQ 3.8.7 . The dependencies listed are for Python only,
+dependencies for Node js can be installed via npm install. </p>
+
+<ul>
+  <li>pymongo</li>
+  <li>pika</li>
+  <li>numpy</li>
+  <li>bson</li>
+  <li>pandas</li>
+</ul>
 
 
  
