@@ -10,9 +10,9 @@
   <li> cd to project directory and run the following commands </li>
   
   ```
-  npm install 
-  cd api/python-scripts
-  python createDB.py
+  npm install #install all dependencies listed in package.json
+  cd api/python-scripts 
+  python createDB.py #insert video transcripts into mongoDB 
   ```
   <li> Open another command prompt and start a rabbitmq server </li>
   
