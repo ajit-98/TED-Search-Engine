@@ -20,6 +20,12 @@
   
   <img src = "gifs/backend.gif" width = "500">
 </ul>
+
+<h1> Dependecies </h1>
+<p><b>Note</b> the application uses Python 3.7.4, Node.js 12.18.3 and mongoDB 4.2.8. The dependencies listed are for Python only,
+dependencies for Node js can be installed via npm install </p>
+
+
  
 
 
