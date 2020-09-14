@@ -9,17 +9,17 @@
   <li> Clone this repo and install all dependencies (listed below) </li>
   <li> cd to project directory and run the following commands </li>
   
-  '''
+  ```
   npm install 
   cd api/python-scripts
   python createDB.py
-  '''
+  ```
   <li> Open another command prompt and start a rabbitmq server </li>
   
-  '''
+  ```
   rabbitmq-server
   
-  '''
+  ```
   <li> Start the application with nodemon </li>
 </ul>
  
