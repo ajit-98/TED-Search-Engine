@@ -15,7 +15,7 @@ def main():
     channel.basic_consume(queue='DocList',auto_ack=True,on_message_callback=callback)
     channel.start_consuming()
 if __name__=="__main__":
-    channel.basic_publish(exchange = 'ProcQuery',routing_key='Send',body='economic case')
+    channel.basic_publish(exchange = 'ProcQuery',routing_key='Send',body='shah rukh khan')
     print('Message Sent')
     main()
 

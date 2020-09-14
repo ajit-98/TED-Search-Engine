@@ -1,7 +1,7 @@
 {
   "name": "search-engine",
   "version": "1.0.0",
-  "description": "Shitty Search Engine",
+  "description": "TED Search Engine",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

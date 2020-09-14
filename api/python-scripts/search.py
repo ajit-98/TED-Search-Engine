@@ -99,7 +99,6 @@ def rankDocs(query,index_collection=index_collection):
                 query_counter+=1
         if query_counter == len(query):
             isTraversed = True
-
     return sort_tuple(scores)
     #return scores
 
@@ -109,7 +108,8 @@ def getScore(scoreDoc,query,queryIndex,url_body_weight = [0.95,0.05],c1=7,c2=0.0
     docid = queryIndex[query[scoreDoc[0][0]]][0][scoreDoc[0][1]]["docid"]
     query_vector = np.zeros(len(query)) #construct query vector,which contains the idf of each keyword in the query
     idf_sum=0
-    final_score = 0 
+    url_score = 0
+    body_score = 0  
     for i in range(len(query)):
         if queryIndex[query[i]] is not None:
             query_vector[i] += queryIndex[query[i]][1] #add the idf to the query vector
@@ -130,10 +130,8 @@ def getScore(scoreDoc,query,queryIndex,url_body_weight = [0.95,0.05],c1=7,c2=0.0
         substring_parameters = {} #dictionary mapping each substring in the document to some metadata about the substring like length, idf values, number of occurences
         if i%2==0:
             positions = urlpositions
-            weighted_factor = url_body_weight[i] #weighted factor represents the weight of the score if the query is found the url vs in the body
         else:
             positions = docpositions
-            weighted_factor = url_body_weight[i]
         minHeap = MinHeap(len(query)+1,param=1,type='int') 
         isTraversed = False
         ptrs = copy.deepcopy(pos_ptrs)
@@ -210,20 +208,29 @@ def getScore(scoreDoc,query,queryIndex,url_body_weight = [0.95,0.05],c1=7,c2=0.0
             substring_idf_sum = substring_parameters[key][0]
             substring_scores[substring_size-1][1] +=num_of_occurences*substring_idf_sum/idf_sum
             substring_scores[substring_size-1][0] +=1/(len(query)-substring_size+1) 
-        for i in range(len(query)-1,-1,-1):
-            score = c1*substring_scores[i][0] + c2* substring_scores[i][1]
-            if i == len(query) -1:
+        for k in range(len(query)-1,-1,-1):
+            score = c1*substring_scores[k][0] + c2* substring_scores[k][1] #c1*diversity + c2*idf weighted frequency 
+            if k == len(query) -1:
                 alpha = 0.6
-                final_score += tanh(alpha*score)
-            elif i == len(query)-2:
+                if i%2 == 0:
+                    url_score += alpha*score
+                else:
+                    body_score += alpha*score
+            elif k == len(query)-2:
                 alpha = 0.08
-                final_score += tanh(alpha*score)
+                if i%2==0:
+                    url_score += alpha*score
+                else:
+                    body_score+=alpha*score
             else:
                 alpha = alpha/1.1
-                final_score+=tanh(alpha*score)
-        final_score*=weighted_factor
+                if i%2==0:
+                    url_score+=alpha*score
+                else:
+                    body_score += alpha*score
+        final_score = url_body_weight[0]*url_score + url_body_weight[1]*body_score
         avg_distance = np.mean(distances) #use later
-    return docid,final_score
+    return docid,tanh(final_score)
                             
 
 def nodeWorker(query):
