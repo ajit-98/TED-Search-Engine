@@ -16,12 +16,8 @@
   >> python updateIndex.py #create inverted index from video transcript data
   ```
   <li> Open another command prompt and start a rabbitmq server </li>
-  
-  ```
-  >> rabbitmq-server
-  
-  ```
   <li> Start the application with nodemon </li>
+  <img src = "gifs/backend.gif" width = "500">
 </ul>
  
 
