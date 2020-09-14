@@ -20,6 +20,7 @@ json_transcripts = transcript_collection.find(no_cursor_timeout=True).sort('_id'
 
 
 #function to merge two lists of dictionaries
+# Needs to be tested
 def merge(list1,list2,param=None):
     l1 = len(list1)
     l2 = len(list2)
