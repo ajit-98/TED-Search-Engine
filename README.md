@@ -17,6 +17,7 @@
   ```
   <li> Open another command prompt and start a rabbitmq server </li>
   <li> Start the application with nodemon </li>
+  
   <img src = "gifs/backend.gif" width = "500">
 </ul>
  
