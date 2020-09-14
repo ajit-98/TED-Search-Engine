@@ -2,7 +2,6 @@ from preProcess import preProcess,preProcessUrl
 from pymongo import MongoClient
 from dataStructures import MinHeap
 import numpy as np
-import matplotlib.pyplot as plt
 import math
 import sys
 import json

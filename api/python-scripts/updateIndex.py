@@ -18,7 +18,6 @@ json_transcripts = transcript_collection.find(no_cursor_timeout=True).sort('_id'
 
 
 
-
 #function to merge two lists of dictionaries
 # Needs to be tested
 def merge(list1,list2,param=None):
@@ -123,7 +122,7 @@ class InvertedIndex:
 index = InvertedIndex(json_transcripts)
 index.make_index()
 print("Inserting Index Into Database")
-updateIndex(db,index.index)
+createIndex(db,index.index)
 
 
 
